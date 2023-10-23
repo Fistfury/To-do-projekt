@@ -48,6 +48,23 @@ input {
     border: green solid 2px;
     border-radius: 10px;
 }
+#remove-all {
+    flex: 1;
+    transition: .3s;
+
+    font-size: 2rem;
+    padding: 5px;
+
+    background-color: lightblue;
+    color: red;
+
+    border: red solid 2px;
+    border-radius: 10px;
+}
+#remove-all:hover {
+    background-color: red;
+    color: lightblue;
+}
 
 #add-task:hover {
     background-color: green;

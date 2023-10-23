@@ -4,6 +4,7 @@ const addTask = document.getElementById('add-task');
 const taskContainer = document.getElementById('task-container');
 const inputTask = document.getElementById('input-task');
 const errorMessage = document.getElementById('error-message');
+const deleteAll = document.getElementById('remove-all');
 // Event Listener for add button
 
 addTask.addEventListener('click', function(){
@@ -26,28 +27,40 @@ addTask.addEventListener('click', function(){
     task.appendChild(deleteButton);
 
     if(inputTask.value === "") {
-       errorMessage.style.display = 'block';
-       inputTask.style.border = '2px solid red';
-      
-    }
-        else {
+        errorMessage.style.display = 'block';
+        inputTask.style.border = '2px solid red';
+       
+     }
+         else {
             taskContainer.appendChild(task);
-            errorMessage.style.display = 'none';
-            inputTask.style.border = '2px solid black';
-            
-           
-        }
-        inputTask.value = "";
+             errorMessage.style.display = 'none';
+             inputTask.style.border = '2px solid black';
+         
+         }
 
-        checkButton.addEventListener('click', function(){
 
-            checkButton.parentElement.style.textDecoration =
-             "line-through";
-        });
-        deleteButton.addEventListener('click', function(e){
+    inputTask.value = "";
 
-            let target = e.target;
+checkButton.addEventListener('click', function(){
 
-            target.parentElement.parentElement.remove();
-        })
+    checkButton.parentElement.style.textDecoration =
+     "line-through";
 });
+deleteButton.addEventListener('click', function(){
+  
+    let target = this.parentNode;
+
+    target.remove();
+
+
+});
+
+
+
+
+  
+});
+
+deleteAll.addEventListener('click', function(){
+    taskContainer.innerHTML = '';
+});      
